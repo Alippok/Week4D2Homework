@@ -22,6 +22,7 @@ end
 get '/owned_pokemon' do 
   @owned_pokemons = OwnedPokemon.join1
   # pry.byebug
+  
   erb(:"owned_pokemon/index")
 end
 

@@ -1,8 +1,20 @@
-<h1>Pokemons who have trainers</h1>
+<H1>Trainers and Pokemons</H1>
+<% array = Array.new %>
+<% frequencies = Hash.new(0) %>
 
-  <% @owned_pokemons.each do |pokemon| %>
-     
-    <p><%= pokemon.name %></p>
-    <br>
-    <hr>
-  <% end %>
+<% @owned_pokemons.each do |pokemon| %>
+   
+<% array << pokemon.name %>
+
+ <% end %>
+
+ <% array.each{|pokemon| frequencies[pokemon] += 1} %>
+
+ <% frequencies.each do |pokemon, number_of_trainers| %>
+
+   <h3><%= pokemon %></h3>
+   <p>Number of trainers: <%= number_of_trainers %></p>
+
+   <hr>
+
+ <% end %>

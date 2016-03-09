@@ -1,0 +1,26 @@
+<form action="/owned_pokemon" method="post">
+
+
+  <label>Trainers:</label>
+  <select name="trainer_id">
+    <% @trainers.each do |trainer|  %>
+      <option value="<%=trainer.id%>"><%= trainer.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <label>Pokemons:</label>
+  <select name="pokemon_id">
+    <% @pokemons.each do |pokemon| %>
+       <option value="<%=pokemon.id%>"><%= pokemon.name %>
+       </option>
+    <% end %>
+  </select>
+
+<input type="submit">Add pokemon</input>
+
+
+
+
+</form>
+
